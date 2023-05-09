@@ -32,29 +32,26 @@ return require('packer').startup(function(use)
     --use('tpope/vim-surround')
 
     use({
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v2.x',
+        'neovim/nvim-lspconfig',
         requires = {
             -- LSP Support
-            { 'neovim/nvim-lspconfig' },
             { 'williamboman/mason.nvim' },
             { 'williamboman/mason-lspconfig.nvim' },
-
-            -- Autocompletion
-            { 'hrsh7th/nvim-cmp' },
-            { 'hrsh7th/cmp-buffer' },
-            { 'hrsh7th/cmp-path' },
-
-            { 'hrsh7th/cmp-nvim-lsp' },
-            { 'hrsh7th/cmp-nvim-lua' },
-            { 'saadparwaiz1/cmp_luasnip' },
-
-            -- Snippets
-            {
-                'L3MON4D3/LuaSnip',
-                requires = { 'rafamadriz/friendly-snippets' },
-            }
         }
+    })
+    -- Autocompletion
+    use('hrsh7th/nvim-cmp')
+    use('hrsh7th/cmp-buffer')
+    use('hrsh7th/cmp-path')
+
+    use('hrsh7th/cmp-nvim-lsp')
+    use('hrsh7th/cmp-nvim-lua')
+    use('saadparwaiz1/cmp_luasnip')
+
+    -- Snippets
+    use({
+        'L3MON4D3/LuaSnip',
+        requires = { 'rafamadriz/friendly-snippets' },
     })
     use('preservim/nerdcommenter')
 end)

@@ -32,7 +32,7 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 --vim.keymap.set("<leader>ev", ":split $MYVIMRC<CR>", options)
 --vim.keymap.set("<leader>sv", ":source $MYVIMRC<CR>:AirlineRefresh<CR>", options)
-vim.keymap.set("n", "<leader><space>", ":nohlsearch<CR>", options)
+vim.keymap.set("n", "<leader><space>", ":nohlsearch<CR>:cclose<CR>", options)
 vim.keymap.set("n", "<leader>ws", [[:%s/\s\+$//g<CR>]], options)
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
