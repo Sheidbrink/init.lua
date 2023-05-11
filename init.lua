@@ -1,5 +1,8 @@
 require("scott")
 
+--:message
+--:checkhealth
+
 --<C-^> -- prev file
 --* -- search for word under here
 --[[ 
@@ -8,3 +11,10 @@ require("scott")
     @<register>
 ]]--
 
+--<leader> gs - git window
+--s - stage
+--u - unstage
+--U - unstage all
+--I/P - patch
+--cc - commit
+--Git push - push
