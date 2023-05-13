@@ -1,0 +1,21 @@
+{
+  "argparse": {
+    "prefix": "scott",
+    "body": [
+      "import argparse",
+      "",
+      "",
+      "def main():",
+      "\targs = parse_args()",
+      "",
+      "def parse_args(args=None):",
+      "\tparser = argparse.ArgumentParser(description='${1:description}')",
+      "\tparser.add_argument('${2:pos_arg}')",
+      "\treturn parser.parse_args(args=args)",
+      "",
+      "if __name__ == '__main__':",
+      "\tmain()"
+    ],
+    "description": "Start a script with argparse"
+  }
+}
