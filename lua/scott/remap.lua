@@ -8,7 +8,11 @@ vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
 
-vim.keymap.set("n", "<leader>i", "i <ESC>r", options)
+--Save and load sessions
+vim.keymap.set("n", "<leader>ss", ":mksession! " .. os.getenv("HOME") .. "/.vim/sessions/", options)
+vim.keymap.set("n", "<leader>sl", ":source " .. os.getenv("HOME") .. "/.vim/sessions/", options)
+
+--vim.keymap.set("n", "<leader>i", "i <ESC>r", options)
 
 --Use jk to escape in i, v, and s mode
 vim.keymap.set({ "i", "v", "s" }, "jk", "<Esc>", {})
