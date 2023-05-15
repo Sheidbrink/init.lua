@@ -56,4 +56,7 @@ return require('packer').startup(function(use)
         requires = { 'rafamadriz/friendly-snippets' },
     })
     use('preservim/nerdcommenter')
+    use({'nvim-tree/nvim-tree.lua',
+        requires = { 'nvim-tree/nvim-web-devicons' }
+    })
 end)
