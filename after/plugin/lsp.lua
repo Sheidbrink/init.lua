@@ -53,7 +53,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 mason_lspconfig.setup {
-    ensure_installed = vim.tbl_keys(servers),
+    --ensure_installed = vim.tbl_keys(servers),
 }
 
 mason_lspconfig.setup_handlers {

@@ -4,13 +4,14 @@ vim.keymap.set("n", "<leader>ev", ":cd ~/.config/nvim<CR>:split ./lua/scott/pack
 vim.keymap.set("n", "<leader>sv", ":source ~/.config/nvim/lua/scott/packer.lua<CR>:cd -<CR>")
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<leader><leader>", function()
+    vim.cmd("w")
     vim.cmd("so")
 end)
 
---vim.keymap.set("n", "<leader>i", "i_<Esc>r", options)
+vim.keymap.set("n", "<leader>i", "i <ESC>r", options)
 
---Use jk to escape in i and v mode
-vim.keymap.set({"i", "v"}, "jk", "<Esc>", {})
+--Use jk to escape in i, v, and s mode
+vim.keymap.set({ "i", "v", "s" }, "jk", "<Esc>", {})
 
 --Allows you to move around selected line
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -29,7 +30,7 @@ vim.keymap.set("n", "<leader>d", [["_d]])
 vim.keymap.set("v", "<leader>d", [["_d]])
 
 --Copy into clipboard
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 --vim.keymap.set("<leader>ev", ":split $MYVIMRC<CR>", options)
@@ -61,9 +62,9 @@ end, {})
 
 --currently doesn't work
 --vim.api.nvim_create_user_command("WS", function()
-    --vim.cmd("w !sudo tee %")
+--vim.cmd("w !sudo tee %")
 --end, {})
 
 --gk will actually move a line on wrap so thikn this does nicer
-vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true})
-vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true})
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
