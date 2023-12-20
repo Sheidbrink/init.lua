@@ -18,7 +18,7 @@ vim.keymap.set({ "i", "v", "s" }, "jk", "<Esc>", {})
 
 --Allows you to move around selected line
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '>-1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '>-2<CR>gv=gv")
 
 --Keep cursor in the center while scrolling or searching
 vim.keymap.set("n", "<C-d>", "<C-d>zz")

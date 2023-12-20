@@ -23,7 +23,7 @@ vim.opt.hlsearch = true
 vim.opt.showmatch = true
 
 vim.opt.hidden = false
---vim.opt.termguicolors = true
+vim.opt.termguicolors = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false
