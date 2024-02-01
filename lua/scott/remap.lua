@@ -1,7 +1,7 @@
 local options = { noremap = true }
 vim.g.mapleader = ","
-vim.keymap.set("n", "<leader>ev", ":cd ~/.config/nvim<CR>:split ./lua/scott/packer.lua<CR>")
-vim.keymap.set("n", "<leader>sv", ":source ~/.config/nvim/lua/scott/packer.lua<CR>:cd -<CR>")
+vim.keymap.set("n", "<leader>ev", ":cd ~/.config/nvim<CR>:split ./lua/scott/lazy.lua<CR>")
+vim.keymap.set("n", "<leader>sv", ":source ~/.config/nvim/lua/scott/lazy.lua<CR>:cd -<CR>")
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("w")
     vim.cmd("so")
