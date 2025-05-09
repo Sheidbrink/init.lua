@@ -34,8 +34,22 @@ local on_attach = function(client, bufnr)
     nmap("<C-k>", vim.lsp.buf.signature_help, 'Signature Documentation')
 end
 
-local servers = {
-    lua_ls = {
+require('mason').setup()
+local mason_lspconfig = require('mason-lspconfig')
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
+mason_lspconfig.setup {
+    ensure_installed = { "lua_ls" },
+}
+
+vim.lsp.config('*', {
+    capabilities = capabilities,
+    on_attach = on_attach,
+})
+
+vim.lsp.config('lua_ls', {
+    settings = {
         Lua = {
             diagnostics = {
                 globals = { 'vim' }
@@ -43,28 +57,9 @@ local servers = {
             workspace = { checkThirdParty = false },
             telemetry = { enable = false },
         }
-    },
-    jedi_language_server = {}
-}
-
-require('mason').setup()
-local mason_lspconfig = require('mason-lspconfig')
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
-
-mason_lspconfig.setup {
-    --ensure_installed = vim.tbl_keys(servers),
-}
-
-mason_lspconfig.setup_handlers {
-    function(server_name)
-        require('lspconfig')[server_name].setup {
-            capabilities = capabilities,
-            on_attach = on_attach,
-            settings = servers[server_name],
-        }
-    end
-}
+    }
+})
+vim.lsp.config('jedi_language_server', {})
 --for _, server_name in ipairs(mason_lspconfig.get_installed_servers()) do
 --require('lspconfig')[server_name].setup({
 --on_attach = on_attach,
