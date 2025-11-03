@@ -3,19 +3,40 @@
     "prefix": "scott",
     "body": [
       "import argparse",
+      "import logging",
+      "",
+      "log = logging.getLogger(__name__)",
       "",
       "",
       "def main():",
       "\targs = parse_args()",
+      "\tlevels = [logging.WARNING, logging.INFO, logging.DEBUG]",
+      "\tlevel = levels[min(args.verbose, len(levels) - 1)]",
+      "\tlogging.basicConfig(level=level) ",
+      "",
       "",
       "def parse_args(args=None):",
       "\tparser = argparse.ArgumentParser(description='${1:description}')",
       "\tparser.add_argument('${2:pos_arg}')",
+      "\tparser.add_argument('-v', '--verbose', action='count', default=0, help='Increase verbosity.')",
       "\treturn parser.parse_args(args=args)",
+      "",
       "",
       "if __name__ == '__main__':",
       "\tmain()"
     ],
     "description": "Start a script with argparse"
+  },
+  "script": {
+      "prefix": "script",
+      "body": [
+          "# /// script",
+          "# dependencies = [",
+          "#   ${1}",
+          "# ]",
+          "# requires-python = \">=${2:3.10}\"",
+          "# ///"
+      ],
+      "description": "Inline Script Metadata"
   }
 }
