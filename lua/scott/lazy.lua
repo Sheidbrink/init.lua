@@ -28,7 +28,6 @@ plugins = {
         run = ':TSUpdate'
     },
     { 'nvim-treesitter/nvim-treesitter-context' },
-    { 'nvim-treesitter/playground' },
     { 'mbbill/undotree' },
     { 'airblade/vim-gitgutter' },
     { 'tpope/vim-fugitive' },
@@ -40,7 +39,6 @@ plugins = {
             { 'williamboman/mason-lspconfig.nvim' },
         }
     },
-    { 'hrsh7th/nvim-cmp' },
     { 'hrsh7th/nvim-cmp' },
     { 'hrsh7th/cmp-buffer' },
     { 'hrsh7th/cmp-path' },
